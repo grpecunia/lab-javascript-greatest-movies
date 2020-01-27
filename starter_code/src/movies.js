@@ -36,6 +36,10 @@ const howManyMovies = (arr) => {
         return 0;
     }
 
+// function howManyMovies(arr) {
+//     return arr.filter(movie => movie.genre.includes('Drama') && movie.director === 'Steven Spielberg').length;
+// }
+
     //** Check the code for debugging */
     // for (let i in stevenMovies) {
     //     if (stevenMovies.length == 0) {
@@ -55,11 +59,17 @@ const howManyMovies = (arr) => {
 
 const orderAlphabetically = (arr) => {
     let newArr = [...arr];
+    let retArr = []
     newArr.sort((a,b) => a.title > b.title ? 1 : -1);
     if (newArr.length > 20) {
-    newArr.slice(0,20).map(movies => movies.title)
+    retArr = newArr.slice(0,20).map(movies => movies.title)
+    console.log(retArr)
+    return retArr;
+    } else {
+        console.log(newArr)
+        return newArr.map(movies => movies.title);
         }
-    return newArr;
+        // console.log('This is the retArr - ' + retArr)
 }
 
 // Iteration 4: All rates average - Get the average of all rates with 2 decimals
